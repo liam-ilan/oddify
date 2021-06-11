@@ -67,6 +67,7 @@ class Oddify():
         await respond(message)
     
     self.client.run(self.token)
-
-keep_alive()
-oddify = Oddify()
+    
+if __name__ == '__main__':
+  keep_alive()
+  oddify = Oddify()

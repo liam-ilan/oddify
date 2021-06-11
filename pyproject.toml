@@ -9,6 +9,8 @@ python = "^3.9"
 discord = "^1.0.1"
 python-dotenv = "^0.17.1"
 Flask = "^2.0.1"
+gunicorn = "^20.1.0"
+eventlet = "^0.31.0"
 
 [tool.poetry.dev-dependencies]
 

@@ -1,8 +1,7 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask
 from threading import Thread
-from dotenv import load_dotenv
-
 load_dotenv()
 
 try:
@@ -14,11 +13,11 @@ app = Flask('')
 
 @app.route('/')
 def home():
-  return "Staying alive :)"
+  return "Stayin alive :)"
 
 def run():
   app.run(host='0.0.0.0', port=port)
 
-def keepAlive():
+def keep_alive():
   t = Thread(target=run)
   t.start()

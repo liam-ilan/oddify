@@ -1,14 +1,12 @@
 import os
-from dotenv import load_dotenv
 from flask import Flask
-from threading import Thread
-load_dotenv()
 
 app = Flask(__name__)
 
+# for uptime robot to ping and keep alive
 @app.route('/')
 def home():
-  return "Stayin alive :)"
+  return "Hello :)"
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0')

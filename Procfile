@@ -1,2 +1,2 @@
-web: gunicorn keepalive:app
+web: gunicorn ping:app
 worker: python main.py

@@ -8,6 +8,7 @@ authors = ["Liam Ilan <snowboardsheep@gmail.com>"]
 python = "^3.9"
 discord = "^1.0.1"
 python-dotenv = "^0.17.1"
+Flask = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 

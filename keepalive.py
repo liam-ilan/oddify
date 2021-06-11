@@ -9,6 +9,7 @@ try:
 except:
   port = 3000
 
+print(port)
 app = Flask('')
 
 @app.route('/')

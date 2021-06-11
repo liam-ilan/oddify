@@ -2,7 +2,7 @@ import os
 import discord
 from pokemon import pokemon
 from dotenv import load_dotenv
-from keepalive import keep_alive
+from keepalive import keep_alive, app
 load_dotenv()
 
 class Oddify():
@@ -67,7 +67,7 @@ class Oddify():
         await respond(message)
     
     self.client.run(self.token)
-    
+
 if __name__ == '__main__':
   keep_alive()
   oddify = Oddify()

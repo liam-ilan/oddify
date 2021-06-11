@@ -70,4 +70,5 @@ class Oddify():
 
 if __name__ == '__main__':
   keep_alive()
+  print("hi")
   oddify = Oddify()

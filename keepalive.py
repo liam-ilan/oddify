@@ -10,9 +10,4 @@ app = Flask(__name__)
 def home():
   return "Stayin alive :)"
 
-def run():
-  app.run(host='0.0.0.0')
-
-def keep_alive():
-  t = Thread(target=run)
-  t.start()
+app.run(host='0.0.0.0')

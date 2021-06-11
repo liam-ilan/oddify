@@ -69,6 +69,8 @@ class Oddify():
     self.client.run(self.token)
 
 if __name__ == '__main__':
+  print("Keep alive starting...")
   keep_alive()
-  print("hi")
+  print("Oddify starting...")
   oddify = Oddify()
+  print("Oddify done maybe?")

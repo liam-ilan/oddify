@@ -4,10 +4,29 @@
 ### A discord bot... but Oddish???
 Oddify is a discord bot built for the sole of pasting Oddish's face onto random pokemon. It is made with [Pokemon Fusion](https://pokemon.alexonsager.net/), and [discord.py](https://discordpy.readthedocs.io/en/stable/).
 
-![Oddnat](https://images.alexonsager.net/pokemon/fused/48/48.43.png) ![Oddwhirl](https://images.alexonsager.net/pokemon/fused/61/61.43.png) ![Oddto](https://images.alexonsager.net/pokemon/fused/132/132.43.png)
+![Oddnat](./img/oddnat.png) ![Oddwhirl](./img/oddwhirl.png) ![Oddto](./img/oddto.png)
 
 ### How to use
 First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342848174293022&permissions=268823632&scope=bot). Then just type `oddify <pokemon>` to get started!
+
+### Some fun pokemon... but odd
+| ![Oddpod](./img/oddpod.png) | ![Oddster](./img/oddster.png) |
+| :-------------------------: | :---------------------------: |
+| > `oddify metapod`          | > `oddify cloyster`           |
+
+| ![Oddgar](./img/oddgar.png) | ![Oddth](./img/oddth/png) |
+| :-------------------------: | :-----------------------: |
+| > `oddify gengar`           | > `oddify meowth`         |
+
+| ![Oddmime](./img/oddmime.png) | ![Oddfing](oddfing) |
+| :---------------------------: | :-----------------: |
+| > `oddify mr. mime`           | > `oddify koffing`  |
+
+| ![Oddlax](./img/oddlax.png) | ![Oddish](./img/oddish.png) |
+| :-------------------------: | :-------------------------: |
+| > `oddify snorlax`          | > `oddify oddish`           |
+
+All 151 (+1) first generation pokemon are supported through https://pokemon.alexonsager.net/.
 
 ### Development
 Clone this repo
@@ -44,22 +63,3 @@ to start the bot
 ### Credits
 Bot created by [Liam Ilan](liamilan.com)
 All fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)
-
-### Some fun pokemon... but odd
-| ![Oddpod](https://images.alexonsager.net/pokemon/fused/11/11.43.png) | ![Oddster](https://images.alexonsager.net/pokemon/fused/91/91.43.png) |
-| :------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| > `oddify metapod`                                                   | > `oddify cloyster`                                                   |
-
-| ![Oddgar](https://images.alexonsager.net/pokemon/fused/94/94.43.png) | ![Oddth](https://images.alexonsager.net/pokemon/fused/52/52.43.png) |
-| :------------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| > `oddify gengar`                                                    | > `oddify meowth`                                                   |
-
-| ![Oddmime](https://images.alexonsager.net/pokemon/fused/122/122.43.png) | ![Oddfing](https://images.alexonsager.net/pokemon/fused/109/109.43.png) |
-| :---------------------------------------------------------------------: | :---------------------------------------------------------------------: |
-| > `oddify mr. mime`                                                     | > `oddify koffing`                                                      |
-
-| ![Oddlax](https://images.alexonsager.net/pokemon/fused/143/143.43.png)  | ![Oddlax](https://images.alexonsager.net/pokemon/fused/43/43.43.png)    |
-| :---------------------------------------------------------------------: | :---------------------------------------------------------------------: |
-| > `oddify snorlax`                                                      | > `oddify oddish` for just Oddish :)                                    |
-
-All 151 (+1) first generation pokemon are supported through https://pokemon.alexonsager.net/.

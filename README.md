@@ -14,11 +14,11 @@ First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342
 | :-------------------------: | :---------------------------: |
 | > `oddify metapod`          | > `oddify cloyster`           |
 
-| ![Oddgar](./img/oddgar.png) | ![Oddth](./img/oddth/png) |
+| ![Oddgar](./img/oddgar.png) | ![Oddth](./img/oddth.png) |
 | :-------------------------: | :-----------------------: |
 | > `oddify gengar`           | > `oddify meowth`         |
 
-| ![Oddmime](./img/oddmime.png) | ![Oddfing](oddfing) |
+| ![Oddmime](./img/oddmime.png) | ![Oddfing](./img/oddfing.png) |
 | :---------------------------: | :-----------------: |
 | > `oddify mr. mime`           | > `oddify koffing`  |
 
@@ -61,5 +61,4 @@ to start the bot
 3. Ping the site to keep the bot online (see `ping.py`)
 
 ### Credits
-Bot created by [Liam Ilan](liamilan.com)
-All fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)
+Bot created by [Liam Ilan](liamilan.com), all fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)

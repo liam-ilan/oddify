@@ -102,4 +102,5 @@ class Oddify():
     self.client.run(self.token)
 
 if __name__ == '__main__':
+  print("hello")
   oddify = Oddify()

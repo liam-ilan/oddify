@@ -1,4 +1,4 @@
-pokemon = [
+pokemons = [
   "MissingNo",
   "Bulbasaur",
   "Ivysaur",
@@ -153,4 +153,4 @@ pokemon = [
   "Mew"
 ]
 
-pokemon = [x.lower() for x in pokemon]
+pokemons = [pokemon.lower() for pokemon in pokemons]

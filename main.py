@@ -1,6 +1,8 @@
 import os
 import discord
-from pokemon import pokemon
+import pycountry
+import oddifiers
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -18,38 +20,70 @@ class Oddify():
     async def respond(message):
 
       # pull argument from message
-      argument = message.content.split(" ", 1)[1]
+      argument = message.content.split(" ", 1)[1].lower()
 
       # create embed to package response
       result = discord.Embed()
 
+      # image for oddifying countries
+      localImage = None
+
       try:
-        # find index of pokemon
-        pokemonIndex = pokemon.index(argument.lower())
+        # test if pokemon can be oddified
+        oddifiedUrl = oddifiers.oddifyPokemon(argument)
 
       except:
-        if argument.lower() == "help":
-          # help command
-          result.color = discord.Colour.blue()
-          result.title = "Help"
-          result.add_field(name = "Want to Oddify?", value = "Just type oddify `Pokemon` to Oddify???")
+        # if not oddifying pokemon, test if oddifying country
+        try:
+          pycountry.countries.lookup(argument.lower())
+
+        except:
+          if argument.lower() == "help":
+
+            # setup embed
+            result.color = discord.Colour.blue()
+            result.title = "Help?"
+
+            result.add_field(
+              name = "🦄   Oddifying a Pokemon?", 
+              value = "Just type `oddify <Pokemon>` to Oddify???"
+            )
+
+            result.add_field(
+              name = "🌎   Oddifying a Country?",
+              value = "Just type `oddify <Country>` or `oddify <Country Code>` to Oddify???"
+            )
+          else:
+
+            # error
+            # setup embed
+            result.color = discord.Colour.red()
+            result.title = "Who's that pokemon???"
+
         else:
-          # send error if invalid
-          result.title = "Error: Pokemon Not Found???"
-          result.color = discord.Colour.red()
+          # oddify and save image
+          oddifiers.oddifyCountry(argument.lower()).save("flag.png")
+          localImage = discord.File("flag.png")
+
+          # setup embed
+          img = "attachment://flag.png"
+          result.set_image(url = img)
+          result.color = discord.Colour.green()
 
       else:
-        # get content for image
-        # url in format url<pokedex num>/<pokedex num>.43.png
-        # 43 is oddish's pokedex number
-        img = "https://images.alexonsager.net/pokemon/fused/" + str(pokemonIndex) + "/" + str(pokemonIndex) + ".43.png"
-        result.set_image(url = img)
+        # get data for image
+        data = oddifiers.oddifyPokemon(argument)
+        
+        # set up embed
+        result.set_image(url = data["url"])
         result.color = discord.Colour.green()
+        result.title = "Odd " + data["name"] + "???"
 
-        # title
-        result.title = "Odd " + pokemon[pokemonIndex].capitalize() + "???"
-
-      await self.channel.send(embed=result)
+      # send out
+      if localImage != None:
+        await self.channel.send(embed=result, file=localImage)
+      else:
+        await self.channel.send(embed=result)
 
     @self.client.event
     async def on_message(message):

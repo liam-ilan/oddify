@@ -4,8 +4,10 @@
 ### A discord bot... but Oddish???
 Oddify is a discord bot built for the sole of pasting Oddish's face onto random pokemon (and flags). It is made with [Pokemon Fusion](https://pokemon.alexonsager.net/), [Flagpedia](https://flagpedia.net/), and [discord.py](https://discordpy.readthedocs.io/en/stable/).
 
-![Oddnat](./img/oddnat.png) <img src="./img/canada.png" alt="canada" width="240"/>
-![Oddto](./img/oddto.png) ![Oddwhirl](./img/oddwhirl.png) 
+| ![Oddnat](./img/oddnat.png) | ![Oddto](./img/oddto.png) | ![Oddwhirl](./img/oddwhirl.png) |
+| :-------------------------: | :-----------------------: | :-----------------------------: |
+| <img src="./img/canada.png" alt="canada" width="240"/> | <img src="./img/uk.png" alt="uk" width="240"/> | <img src="./img/tuvalu.png" alt="tuvalu" width="240"/> |
+
 
 ### How to use
 First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342848174293022&permissions=268823632&scope=bot). Then just type `oddify help` to get started!

@@ -15,14 +15,21 @@ def oddifyImage(url):
   return back
 
 # gets country
-# returns PIL image
+# returns {PIL image, name}
 def oddifyCountry(country):
   countryName = country.lower()
 
   countryData = pycountry.countries.lookup(countryName)
+
+  countryName = None
+  try:
+    countryName = countryData.common_name
+  except:
+    countryName = countryData.name
+
   countryCode = countryData.alpha_2.lower()
 
-  return oddifyImage("https://flagpedia.net/data/flags/emoji/twitter/256x256/" + countryCode + ".png")
+  return {"img": oddifyImage("https://flagpedia.net/data/flags/emoji/twitter/256x256/" + countryCode + ".png"), "name": countryName}
 
 # gets pokemon
 # returns {url, name}

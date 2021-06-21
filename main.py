@@ -61,13 +61,17 @@ class Oddify():
             result.title = "Who's that pokemon???"
 
         else:
-          # oddify and save image
-          oddifiers.oddifyCountry(argument.lower()).save("flag.png")
+          # oddify
+          oddifiedCountry = oddifiers.oddifyCountry(argument.lower())
+
+          # save image
+          oddifiedCountry["img"].save("flag.png")
           localImage = discord.File("flag.png")
 
           # setup embed
           img = "attachment://flag.png"
           result.set_image(url = img)
+          result.title = "Odd " + oddifiedCountry["name"] + "???"
           result.color = discord.Colour.green()
 
       else:

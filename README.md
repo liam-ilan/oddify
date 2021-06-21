@@ -2,12 +2,13 @@
 [Add Oddify to your Discord Server](https://discord.com/api/oauth2/authorize?client_id=852342848174293022&permissions=268823632&scope=bot)
 
 ### A discord bot... but Oddish???
-Oddify is a discord bot built for the sole of pasting Oddish's face onto random pokemon. It is made with [Pokemon Fusion](https://pokemon.alexonsager.net/), and [discord.py](https://discordpy.readthedocs.io/en/stable/).
+Oddify is a discord bot built for the sole of pasting Oddish's face onto random pokemon (and flags). It is made with [Pokemon Fusion](https://pokemon.alexonsager.net/), [Flagpedia](https://flagpedia.net/), and [discord.py](https://discordpy.readthedocs.io/en/stable/).
 
-![Oddnat](./img/oddnat.png) ![Oddwhirl](./img/oddwhirl.png) ![Oddto](./img/oddto.png)
+![Oddnat](./img/oddnat.png) ![Canada](./img/canada.png) 
+![Oddto](./img/oddto.png) ![Oddwhirl](./img/oddwhirl.png) 
 
 ### How to use
-First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342848174293022&permissions=268823632&scope=bot). Then just type `oddify <pokemon>` to get started!
+First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342848174293022&permissions=268823632&scope=bot). Then just type `oddify help` to get started!
 
 ### Some fun pokemon... but odd
 | ![Oddpod](./img/oddpod.png) | ![Oddster](./img/oddster.png) |
@@ -19,14 +20,20 @@ First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342
 | > `oddify gengar`           | > `oddify meowth`         |
 
 | ![Oddmime](./img/oddmime.png) | ![Oddfing](./img/oddfing.png) |
-| :---------------------------: | :-----------------: |
-| > `oddify mr. mime`           | > `oddify koffing`  |
+| :---------------------------: | :---------------------------: |
+| > `oddify mr. mime`           | > `oddify koffing`            |
 
 | ![Oddlax](./img/oddlax.png) | ![Oddish](./img/oddish.png) |
 | :-------------------------: | :-------------------------: |
 | > `oddify snorlax`          | > `oddify oddish`           |
 
+### Flags
+| ![France](./img/france.png) | ![Oddster](./img/unitedstates.png) |
+| :-------------------------: | :--------------------------------: |
+| > `oddify france`           | > `oddify us`                      |
+
 All 151 (+1) first generation pokemon are supported through https://pokemon.alexonsager.net/.
+Flags from [Flagpedia](https://flagpedia.net/), names from [pycountry](https://pypi.org/project/pycountry/).
 
 ### Development
 Clone this repo
@@ -56,9 +63,10 @@ poetry run python main.py
 to start the bot
 
 ### Hosting through Heroku
-1. Set your buildpack to python
-2. Push the bot to Heroku
-3. Ping the site to keep the bot online (see `ping.py`)
+1. Set your buildpack to Python
+2. Build `requirements.txt` with `poetry export -f requirements.txt --output requirements.txt, since Heroku's Python buildpack uses pip to install packages.
+3. Push the bot to Heroku
+4. Ping the site to keep the bot online (see `ping.py`)
 
 ### Credits
 Bot created by [Liam Ilan](liamilan.com), all fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)

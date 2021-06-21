@@ -71,4 +71,4 @@ to start the bot
 4. Ping the site to keep the bot online (see `ping.py`)
 
 ### Credits
-Bot created by [Liam Ilan](liamilan.com), all fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)
+Bot created by [Liam Ilan](https://www.liamilan.com/), all fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)

@@ -4,7 +4,7 @@
 ### A discord bot... but Oddish???
 Oddify is a discord bot built for the sole of pasting Oddish's face onto random pokemon (and flags). It is made with [Pokemon Fusion](https://pokemon.alexonsager.net/), [Flagpedia](https://flagpedia.net/), and [discord.py](https://discordpy.readthedocs.io/en/stable/).
 
-![Oddnat](./img/oddnat.png) ![Canada](./img/canada.png) 
+![Oddnat](./img/oddnat.png) <img src="./img/canada.png" alt="canada" width="240"/>
 ![Oddto](./img/oddto.png) ![Oddwhirl](./img/oddwhirl.png) 
 
 ### How to use
@@ -28,9 +28,9 @@ First, [Invite Oddify](https://discord.com/api/oauth2/authorize?client_id=852342
 | > `oddify snorlax`          | > `oddify oddish`           |
 
 ### Flags
-| ![France](./img/france.png) | ![Oddster](./img/unitedstates.png) |
-| :-------------------------: | :--------------------------------: |
-| > `oddify france`           | > `oddify us`                      |
+| <img src="./img/france.png" alt="france" width="240"/> | <img src="./img/unitedstates.png" alt="US" width="240"/> |
+| :----------------------------------------------------: | :------------------------------------------------------: |
+| > `oddify france`                                      | > `oddify us`                                            |
 
 All 151 (+1) first generation pokemon are supported through https://pokemon.alexonsager.net/.
 Flags from [Flagpedia](https://flagpedia.net/), names from [pycountry](https://pypi.org/project/pycountry/).

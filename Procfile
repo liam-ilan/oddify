@@ -1,2 +1,1 @@
-web: gunicorn ping:app
-worker: python main.py
+web: gunicorn main:app

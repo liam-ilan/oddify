@@ -1,8 +1,6 @@
 import os
-import threading
 import discord
 import pycountry
-from ping import app
 import oddifiers
 
 from dotenv import load_dotenv
@@ -108,7 +106,4 @@ class Oddify():
     self.client.run(self.token)
 
 if __name__ == '__main__':
-  pingThread = threading.Thread(target=app.run, kwargs={"host": "0.0.0.0"}, daemon=True)
-  pingThread.start()
   oddify = Oddify()
-

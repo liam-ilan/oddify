@@ -65,6 +65,8 @@ poetry run python main.py
 to start the bot
 
 ### Hosting through Heroku
+#### Note: this bot is currently being hosted through https://replit.com
+### You can find the repl here: https://replit.com/@snowboardsheep/oddify
 1. Set your buildpack to Python
 2. Build `requirements.txt` with `poetry export -f requirements.txt --output requirements.txt`, since Heroku's Python buildpack uses pip to install packages.
 3. Push the bot to Heroku

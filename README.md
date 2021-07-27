@@ -73,4 +73,6 @@ Note: this bot is currently being hosted through https://replit.com, you can fin
 4. Ping the site to keep the bot online (see `ping.py`)
 
 ### Credits
-Bot created by [Liam Ilan](https://www.liamilan.com/), all fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)
+- Bot created by [Liam Ilan](https://www.liamilan.com/)
+- All fusions created by [Pokemon Fusion](https://pokemon.alexonsager.net/)
+- Oddifying profile pictures brought to you by [Andrei Sva](https://github.com/AndreiSva)

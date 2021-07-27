@@ -39,7 +39,7 @@ def oddifyPokemon(pokemon):
   url = "https://images.alexonsager.net/pokemon/fused/" + str(pokemonIndex) + "/" + str(pokemonIndex) + ".43.png"
   return {"url": url, "name": pokemons[pokemonIndex]}
 
-# gets profile picture
+# gets user object
 # returns {PIL image, name}
-def oddifyUser(member):
-  return {"img": oddifyImage(member.avatar_url), "name": member.name}
+def oddifyUser(user):
+  return {"img": oddifyImage(user.avatar_url), "name": user.name}

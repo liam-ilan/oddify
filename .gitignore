@@ -4,3 +4,4 @@ poetry.lock
 .env
 temp.py
 flag.png
+profile.png

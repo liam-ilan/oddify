@@ -12,7 +12,7 @@ class Oddify():
 
   def __init__(self):
 
-    # To get member objects from get_user() client requires special intents
+    # to get member objects from get_user() client requires special intents
     intents = discord.Intents.default()
     intents.members = True
 
@@ -45,46 +45,70 @@ class Oddify():
           pycountry.countries.lookup(argument.lower())
 
         except:
-          if argument.lower() == "help":
+          # if not contry, test if oddifying person
 
-            # setup embed
-            result.color = discord.Colour.blue()
-            result.title = "Help?"
+          try:
+            # get id
+            user_id = argument.lower()
 
-            result.add_field(
-              name = "🦄   Oddifying a Pokemon?", 
-              value = "Just type `oddify <Pokemon>` to Oddify???"
-            )
+            # mentions are in format <@!id>
+            # trim away <@! and >, anc convert to int
+            user_id = int(user_id[3:len(user_id) - 1])
+            
+            # test if user exists
+            user = self.client.get_user(user_id)
 
-            result.add_field(
-              name = "🌎   Oddifying a Country?",
-              value = "Just type `oddify <Country>` or `oddify <Country Code>` to Oddify???"
-            )
-          else:
-            try:
-              user_id = argument.lower()
+            # test if valid
+            url, name = user.avatar_url, user.name  
 
-              # If the argument is a mention, trim it into an id
-              if user_id[0] == "<":
-                user_id = user_id[3:len(user_id) - 1]
-              
-              user_id = int(user_id)
-              oddifiedpfp = oddifiers.oddifyUser(self.client.get_user(user_id))
-              result.color = discord.Colour.blue()
-                
-              oddifiedpfp["img"].save("pfp.png")
-              localImage = discord.File("pfp.png")
+          except:
+            if argument.lower() == "help":
 
-              img = "attachment://pfp.png"
-
-              result.title = name = " 🐕 " + oddifiedpfp["name"] + " is Odd?????"
-              result.set_image(url = img)
-
-            except:
-              # error
               # setup embed
+              result.color = discord.Colour.blue()
+              result.title = "Help?"
+
+              result.add_field(
+                name = "🦄   Oddifying a Pokemon?", 
+                value = "Just type `oddify <Pokemon>` to Oddify???"
+              )
+
+              result.add_field(
+                name = "🌎   Oddifying a Country?",
+                value = "Just type `oddify <Country>` or `oddify <Country Code>` to Oddify???"
+              )
+
+              result.add_field(
+                name = "🧑‍🦲   Oddifying a person?",
+                value = "Just type `oddify @<person>` to Oddify???"
+              )
+
+            else:
+              # error
               result.color = discord.Colour.red()
               result.title = "Who's that pokemon???"
+
+          else:         
+            # get id
+            user_id = argument.lower()
+
+            # mentions are in format <@!id>
+            # trim away <@! and >, anc convert to int
+            user_id = int(user_id[3:len(user_id) - 1])
+
+            # get user and oddify
+            user = self.client.get_user(user_id)
+            oddifiedUser = oddifiers.oddifyUser(user)
+            
+            # save image
+            oddifiedUser["img"].save("profile.png")
+            localImage = discord.File("profile.png")
+
+            # setup embed
+            img = "attachment://profile.png"
+            result.set_image(url = img)
+            result.title = name = "Odd " + oddifiedUser["name"] + "???"
+            result.color = discord.Colour.green()
 
         else:
           # oddify

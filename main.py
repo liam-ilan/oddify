@@ -7,11 +7,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Oddify():
-  client = discord.Client()
   token = os.environ["TOKEN"]
   channel = None
 
   def __init__(self):
+
+    # To get member objects from get_user() client requires special intents
+    intents = discord.Intents.default()
+    intents.members = True
+
+    self.client = discord.Client(intents=intents)
+
+
     @self.client.event
     async def on_ready():
       print("Discord Bot Ready!")
@@ -54,11 +61,30 @@ class Oddify():
               value = "Just type `oddify <Country>` or `oddify <Country Code>` to Oddify???"
             )
           else:
+            try:
+              user_id = argument.lower()
 
-            # error
-            # setup embed
-            result.color = discord.Colour.red()
-            result.title = "Who's that pokemon???"
+              # If the argument is a mention, trim it into an id
+              if user_id[0] == "<":
+                user_id = user_id[3:len(user_id) - 1]
+              
+              user_id = int(user_id)
+              oddifiedpfp = oddifiers.oddifyUser(self.client.get_user(user_id))
+              result.color = discord.Colour.blue()
+                
+              oddifiedpfp["img"].save("pfp.png")
+              localImage = discord.File("pfp.png")
+
+              img = "attachment://pfp.png"
+
+              result.title = name = " 🐕 " + oddifiedpfp["name"] + " is Odd?????"
+              result.set_image(url = img)
+
+            except:
+              # error
+              # setup embed
+              result.color = discord.Colour.red()
+              result.title = "Who's that pokemon???"
 
         else:
           # oddify

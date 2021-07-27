@@ -1,6 +1,7 @@
 from PIL import Image
 import requests
 import pycountry
+import discord
 from pokemon import pokemons
 
 # gets url, returns PIL image
@@ -37,3 +38,8 @@ def oddifyPokemon(pokemon):
   pokemonIndex = pokemons.index(pokemon.lower())
   url = "https://images.alexonsager.net/pokemon/fused/" + str(pokemonIndex) + "/" + str(pokemonIndex) + ".43.png"
   return {"url": url, "name": pokemons[pokemonIndex]}
+
+# gets profile picture
+# returns {PIL image, name}
+def oddifyUser(member):
+  return {"img": oddifyImage(member.avatar_url), "name": member.name}

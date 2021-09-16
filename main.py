@@ -18,14 +18,7 @@ class Oddify():
 
     self.client = discord.Client(intents=intents)
 
-
-    @self.client.event
-    async def on_ready():
-      print("Discord Bot Ready!")
-
-    # respond
-    async def respond(message):
-
+    async def updatePresence():
       # server count
       serverCount = len(self.client.guilds)
 
@@ -47,6 +40,15 @@ class Oddify():
           name = "oddify help, in " + str(serverCount) + " servers with " + str(memberCount) + " members"
         )
       )
+
+    @self.client.event
+    async def on_ready():
+      print("Discord Bot Ready!")
+      await updatePresence()
+
+    # respond
+    async def respond(message):
+      await updatePresence()
 
       # pull argument from message
       argument = message.content.split(" ", 1)[1].lower()

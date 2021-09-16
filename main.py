@@ -27,9 +27,24 @@ class Oddify():
     async def respond(message):
 
       # server count
+      serverCount = len(self.client.guilds)
+
+      # member count
+      # set counts unique elements (members)
+      # note: inneficent implementation, will need to be replaced with higher usage
+      memberList = set()
+
+      for server in self.client.guilds:
+        for user in server.members: 
+          memberList.add(user)
+
+      memberCount = len(memberList)
+
+      # set activity
       await self.client.change_presence(
         activity = discord.Activity(
-          type = discord.ActivityType.watching, name = str(len(self.client.guilds)) + " servers"
+          type = discord.ActivityType.watching, 
+          name = "oddify help, in " + str(serverCount) + " servers with " + str(memberCount) + " members"
         )
       )
 

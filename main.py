@@ -26,6 +26,13 @@ class Oddify():
     # respond
     async def respond(message):
 
+      # server count
+      await self.client.change_presence(
+        activity = discord.Activity(
+          type = discord.ActivityType.watching, name = str(len(self.client.guilds)) + " servers"
+        )
+      )
+
       # pull argument from message
       argument = message.content.split(" ", 1)[1].lower()
 
@@ -52,7 +59,7 @@ class Oddify():
             user_id = argument.lower()
 
             # mentions are in format <@!id>
-            # trim away <@! and >, anc convert to int
+            # trim away <@! and >, and convert to int
             user_id = int(user_id[3:len(user_id) - 1])
             
             # test if user exists
